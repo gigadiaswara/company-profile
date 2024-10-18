@@ -3,7 +3,7 @@ import paboutus from "../public/paboutus.jpg";
 
 const CompanyOverview = () => {
   return (
-    <section className="min-h-screen p-8 flex flex-col items-center justify-center">
+    <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto">
         <Image
           src="/paboutus.jpg"
@@ -16,7 +16,7 @@ const CompanyOverview = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-center">
-            <h1 className="text-4xl font-bold text-left text-black">About Us</h1>
+            <h1 className="text-center text-4xl font-bold mb-8">About Us</h1>
           </div>
 
           <div className="text-lg leading-relaxed text-black text-justify">

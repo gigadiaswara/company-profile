@@ -3,8 +3,8 @@ import Image from 'next/image';
 const OurClients = () => {
   return (
     <section>
-    <div className="bg-gray-100 py-12">
-      <h2 className="text-center text-3xl font-bold mb-8">Our Clients</h2>
+    <div className="py-12">
+      <h2>Our Clients</h2>
       <div className="overflow-hidden">
         <div className="animate-marquee whitespace-nowrap flex">
           <div className="mx-4">
