@@ -1,6 +1,6 @@
 const ServicesSection = () => {
   return (
-    <section className="h-screen flex items-center justify-center bg-gray-300">
+    <section className="min-h-50 flex items-center justify-center">
         <div className="max-w-xl mx-auto text-center">
             <h1 className="text-3xl font-bold mb-4">Our Services</h1>
             <p className="text-lg leading-relaxed">
