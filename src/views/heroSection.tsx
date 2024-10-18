@@ -1,8 +1,9 @@
 const HeroSection = () => {
     return (
-      <section id="heroSection" className="h-screen flex items-center justify-center py-16 text-center text-black">
-        <h2 className="text-3xl font-bold mb-6">We are committed to providing reliable building repair and maintenance services.</h2>
+      <section id="about" className="h-screen snap-start flex items-center justify-center bg-gray-100">
+        <h1 className="text-4xl md:text-6xl font-bold">Welcome to Ageka Konstruksi</h1>
       </section>
+
     );
   };
   

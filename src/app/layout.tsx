@@ -2,7 +2,7 @@
 import HeroSection from '@/views/heroSection';
 import CompanyOverview from '@/views/companyOverview';
 import ServicesSection from '@/views/serviceSection';
-import OurClient from '@/views/OurClient';
+import OurClient from '@/views/ourClient';
 import TeamPage from '@/views/ourTeam';
 import { ReactNode } from 'react';
 import './globals.css';
@@ -21,12 +21,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <div className="flex flex-col min-h-screen">
 
         <header>
-           <nav className="w-full max-w-4xl fixed top-0 inset-x-0 mx-auto z-50 flex justify-around py-4 bg-white text-black shadow-lg">
-            <a href="#" onClick={() => scrollToSection("heroSection")} className="hover:text-yellow-400 mx-4 ">Home</a>
-            <a href="#" onClick={() => scrollToSection("aboutUs")} className="hover:text-yellow-400 mx-4 ">About Us</a>
-            <a href="#" onClick={() => scrollToSection("ourServices")} className="hover:text-yellow-400 mx-4">Services</a>
-            <a href="#" onClick={() => scrollToSection("ourTeam")} className="hover:text-yellow-400 mx-4">Team</a>
-          </nav>
+        <nav className="fixed top-0 w-full bg-white shadow z-50">
+          <ul className="flex space-x-4 p-4">
+            <li><a href="#about" className="hover:text-blue-500 scroll-smooth">About Us</a></li>
+            <li><a href="#services" className="hover:text-blue-500 scroll-smooth">Services</a></li>
+            <li><a href="#team" className="hover:text-blue-500 scroll-smooth">Team</a></li>
+          </ul>
+</nav>
         </header>
 
           <main className="flex-1 container mx-auto p-8">{children}</main>
