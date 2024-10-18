@@ -1,6 +1,6 @@
 const CompanyOverview = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center">
+    <section id="about-us" className="min-h-screen p-8 flex items-center justify-center">
         <div className="max-w-xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">About Us</h1>
             <p className="text-lg leading-relaxed">
