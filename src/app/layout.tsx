@@ -21,8 +21,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <div className="flex flex-col min-h-screen">
 
         <header>
-        <nav className="fixed top-0 w-full bg-white shadow z-50">
-          <ul className="flex space-x-4 p-4">
+        <nav className="fixed top-0 w-full bg-white text-black shadow z-50">
+          <ul className="container mx-auto flex justify-between items-center py-4">
+            <li><a href="#home" className="hover:text-blue-500 scroll-smooth">Ageka Konstruksi</a></li>
             <li><a href="#about" className="hover:text-blue-500 scroll-smooth">About Us</a></li>
             <li><a href="#services" className="hover:text-blue-500 scroll-smooth">Services</a></li>
             <li><a href="#team" className="hover:text-blue-500 scroll-smooth">Team</a></li>
