@@ -1,28 +1,42 @@
+"use client";
+import HeroSection from '@/view/heroSection';
+import CompanyOverview from '@/view/companyOverview';
+import ServicesSection from '@/view/serviceSection';
+import OurClient from '@/view/ourClient';
+import TeamPage from '@/view/ourTeam';
 import { ReactNode } from 'react';
+import './globals.css';
 
-interface LayoutProps {
-  children: ReactNode;
-}
+const Layout = ({ children }: { children: ReactNode }) => {
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div>
-      <nav className="bg-white shadow-md fixed top-0 w-full z-10">
-        <ul className="flex space-x-4 p-4">
-          <li>
-            <a href="#about-us" className="cursor-pointer text-lg">About Us</a>
-          </li>
-          <li>
-            <a href="#services" className="cursor-pointer text-lg">Services</a>
-          </li>
-          <li>
-            <a href="#team" className="cursor-pointer text-lg">Team</a>
-          </li>
-        </ul>
-      </nav>
+    <html lang="en">
+      <body>
+        <div className="flex flex-col min-h-screen">
 
-      <main className="pt-16">{children}</main> {/* Add padding to avoid overlapping with the fixed navbar */}
-    </div>
+        <header>
+           <nav className="w-full max-w-4xl fixed top-0 inset-x-0 mx-auto z-50 flex justify-around py-4 bg-white text-black shadow-lg">
+            <a href="#" onClick={() => scrollToSection("heroSection")} className="hover:text-yellow-400 mx-4 ">Home</a>
+            <a href="#" onClick={() => scrollToSection("aboutUs")} className="hover:text-yellow-400 mx-4 ">About Us</a>
+            <a href="#" onClick={() => scrollToSection("ourServices")} className="hover:text-yellow-400 mx-4">Services</a>
+            <a href="#" onClick={() => scrollToSection("ourTeam")} className="hover:text-yellow-400 mx-4">Team</a>
+          </nav>
+        </header>
+
+          <main className="flex-1 container mx-auto p-8">{children}</main>
+
+          <footer className="bg-gray-900 text-white text-center py-4 mt-8">
+            <div>&copy; 2023 Ageka Konstruksi. All rights reserved.</div>
+          </footer>
+        </div>
+      </body>
+    </html>
   );
 };
 
