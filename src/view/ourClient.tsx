@@ -2,9 +2,8 @@ import Image from 'next/image';
 
 const OurClients = () => {
   return (
-    <section>
-    <div className="py-12">
-      <h2>Our Clients</h2>
+    <section className="py-12">
+      <h2 className="text-center text-4xl font-bold mb-8">Our Clients</h2> 
       <div className="overflow-hidden">
         <div className="animate-marquee whitespace-nowrap flex">
           <div className="mx-4">
@@ -39,7 +38,6 @@ const OurClients = () => {
           </div>
         </div>
       </div>
-    </div>
     </section>
   );
 };

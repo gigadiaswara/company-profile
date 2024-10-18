@@ -26,23 +26,21 @@ const TeamPage = () => {
   }, []);
 
   return (
-    <section id="ourTeam" className="bg-black">
+    <section id="ourTeam" className="bg-white">
       <div>
         <h2 className="text-center text-9xl font-bold mb-12 text text-black">Meet Our Team</h2>
         <div className="flex justify-center space-x-8">
           {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md rounded-lg p-6 text-center max-w-xs flex space-x-4"
-            >
-              <img
-                src={member.picture}
-                alt={member.name}
-                className="rounded-full mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="text-black">{member.position}</p>            
-            </div>
+            <div className="bg-white shadow-md rounded-lg p-6 text-center max-w-xs flex flex-col items-center">
+            <img
+              src={member.picture}
+              alt={member.name}
+              className="w-24 h-24 rounded-full mb-4"
+            />
+            <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+            <p className="text-black mb-2">{member.position}</p>
+            <p className="text-sm text-gray-500">{member.email}</p>            
+          </div>
           ))}
         </div>
       </div>
