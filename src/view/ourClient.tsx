@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 const OurClients = () => {
   return (
+    <section>
     <div className="bg-gray-100 py-12">
       <h2 className="text-center text-3xl font-bold mb-8">Our Clients</h2>
       <div className="overflow-hidden">
@@ -34,11 +35,12 @@ const OurClients = () => {
             <Image src="/9.png" alt="Client Logo 9" width={150} height={75} />
           </div>
           <div className="mx-4">
-            <Image src="/10.png" alt="Client Logo 10" width={150} height={75} />
+            <Image src="/10.jpg" alt="Client Logo 10" width={150} height={75} />
           </div>
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

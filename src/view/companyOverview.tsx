@@ -3,7 +3,7 @@ import paboutus from "../public/paboutus.jpg";
 
 const CompanyOverview = () => {
   return (
-    <section id="aboutUs" className="min-h-screen p-8 flex flex-col items-center justify-center">
+    <section className="min-h-screen p-8 flex flex-col items-center justify-center">
       <div className="max-w-4xl mx-auto">
         <Image
           src="/paboutus.jpg"

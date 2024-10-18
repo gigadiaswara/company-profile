@@ -1,54 +1,58 @@
 "use client";
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface TeamMember {
   name: string;
   email: string;
-  phone: string;
   picture: string;
+  position: string;
 }
-
 const TeamPage = () => {
-  const [members, setMembers] = useState<TeamMember[]>([]);
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
 
   useEffect(() => {
-    const fetchTeamMembers = async () => {
-      const response = await fetch('https://randomuser.me/api/?results=4');
-      const data = await response.json();
-      setMembers(data.results.map((user: any) => ({
-        name: `${user.name.first} ${user.name.last}`,
-        email: user.email,
-        phone: user.phone,
-        picture: user.picture.medium,
-      })));
-    };
-
-    fetchTeamMembers();
+     fetch('https://randomuser.me/api/?results=4')
+      .then((response) => response.json())
+      .then((data) => {
+        setTeamMembers(
+          data.results.map((member: { name: { first: any; last: any; }; email: any; picture: { large: any; }; }) => ({
+            name: `${member.name.first} ${member.name.last}`,
+            email: member.email,
+            picture: member.picture.large,
+            position: 'Software Engineer', 
+          }))
+        );
+      });
   }, []);
 
   return (
-    <main className="text-center text-black">
-      
-      <section className="min-h-screen flex flex col items-center justify-center">
-        <h1 className="text-3xl font-bold mb-8">Meet Our Team</h1>
-        <div className="flex flex-wrap justify-center items-start space-x-6">
-          {members.map((member, index) => (
-            <div key={index} className="flex flex-col items-center bg-white p-4 shadow-lg rounded-lg w-60">
+    <section id="ourTeam" className="py-16 bg-gray-100">
+      <div className="container mx-auto">
+        <h2 className="text-center text-3xl font-bold mb-12">Meet Our Team</h2>
+        <div className="flex justify-center space-x-8">
+          {teamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-lg p-6 text-center max-w-xs"
+            >
               <img
                 src={member.picture}
                 alt={member.name}
-                className="rounded-full w-24 h-24 mb-4"
+                className="w-24 h-24 rounded-full mx-auto mb-4"
               />
-              <h2 className="text-xl font-semibold">{member.name}</h2>
-              <p className="text-gray-600">Email: {member.email}</p>
-              <p className="text-gray-600">Phone: {member.phone}</p>
+              <h3 className="text-xl font-semibold">{member.name}</h3>
+              <p className="text-gray-600">{member.position}</p>
+              <a
+                href={`mailto:${member.email}`}
+                className="text-blue-500 hover:underline"
+              >
+                {member.email}
+              </a>
             </div>
           ))}
         </div>
-      </section>
-      
-    </main>
+      </div>
+    </section>
   );
 };
 

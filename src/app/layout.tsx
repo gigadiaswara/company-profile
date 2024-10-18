@@ -25,6 +25,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <a href="#" onClick={() => scrollToSection("heroSection")} className="hover:text-yellow-400 mx-4 ">Home</a>
             <a href="#" onClick={() => scrollToSection("aboutUs")} className="hover:text-yellow-400 mx-4 ">About Us</a>
             <a href="#" onClick={() => scrollToSection("ourServices")} className="hover:text-yellow-400 mx-4">Services</a>
+            <a href="#" onClick={() => scrollToSection("ourClient")} className="hover:text-yellow-400 mx-4">Clients</a>
             <a href="#" onClick={() => scrollToSection("ourTeam")} className="hover:text-yellow-400 mx-4">Team</a>
           </nav>
         </header>
@@ -32,7 +33,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <main className="flex-1 container mx-auto p-8">{children}</main>
 
           <footer className="bg-gray-900 text-white text-center py-4 mt-8">
-            <div>&copy; 2023 Ageka Konstruksi. All rights reserved.</div>
+            <div>&copy;  Ageka Konstruksi</div>
           </footer>
         </div>
       </body>
